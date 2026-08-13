@@ -37,3 +37,13 @@ for submission_id in submission_ids[:30]:
     }
 
     submission_dicts.append(submission_dict)
+
+submission_dicts = sorted(
+    submission_dicts,
+    key=lambda submission: submission["comments"],
+    reverse=True,
+)
+
+for submission_dict in submission_dicts:
+    print(f"\nTitle: {submission_dict['title']}")
+    print(f"Comments: {submission_dict['comments']}")
